@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -32,7 +33,14 @@ public class Common<T> {
 		Set<T> input = new HashSet<T>();
 		while ((row = br.readLine()) != null) 
 	    {
-			input.add((T) Integer.valueOf(row.trim()));
+			if(row.contains(",")) {
+				String []items = row.split(",");
+				for (int i = 0; i < items.length; i++) {
+					input.add((T) Integer.valueOf(items[i]));
+				}
+			} else {
+				input.add((T) Integer.valueOf(row.trim()));	
+			}
 	    }
 		
 		return input;
