@@ -5,8 +5,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Common<T> {
@@ -24,13 +26,13 @@ public class Common<T> {
         return instance; 
     } 
     
-	public Set<T> readInput(Integer taskNo) throws IOException {
+	public List<T> readInput(Integer taskNo) throws IOException {
 		File file = new File(FILE_DIRECTORY + INPUT + taskNo + ".txt"); 
 		  
 		BufferedReader br = new BufferedReader(new FileReader(file.getAbsolutePath())); 
 		  
 		String row; 
-		Set<T> input = new HashSet<T>();
+		List<T> input = new ArrayList<T>();
 		while ((row = br.readLine()) != null) 
 	    {
 			if(row.contains(",")) {

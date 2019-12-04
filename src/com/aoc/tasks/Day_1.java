@@ -9,9 +9,9 @@ import com.aoc.helpers.Common;
 
 public class Day_1 {
 
-	Set<Integer> inputNumbers;
+	List<Integer> inputNumbers;
 
-	public Day_1(Set<Integer> inputNumbers) {
+	public Day_1(List<Integer> inputNumbers) {
 		this.inputNumbers = inputNumbers;
 	}
 
